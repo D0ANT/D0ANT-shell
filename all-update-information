@@ -1,0 +1,22 @@
+0.0.1:
+  - starting doant shell project
+  - add "print", "output", "say" commands
+  - add invaild command message
+
+
+0.0.2:
+  - add duplication words error
+
+
+0.0.3:
+  - add "get", "input" commands
+
+
+0.0.4;
+  - add shell start information
+  - using datetime module
+
+
+0.0.5:
+  - upload github
+  - add "version" command
