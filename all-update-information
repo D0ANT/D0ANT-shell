@@ -20,3 +20,8 @@
 0.0.5:
   - upload github
   - add "version" command
+
+
+0.0.6:
+  - starting add variable system
+  - starting add variable view system
