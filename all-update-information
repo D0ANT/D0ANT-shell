@@ -25,3 +25,6 @@
 0.0.6:
   - starting add variable system
   - starting add variable view system
+
+0.0.8:
+  - error message color to red
