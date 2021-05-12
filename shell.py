@@ -1,5 +1,9 @@
 import sys
 import datetime
+import colorama
+from colorama import Back, Fore, Style
+
+colorama.init(autoreset=True)
 
 cmd_list = [
 	"print","output","say",
@@ -20,7 +24,7 @@ month = [
 
 cmd_check = 0
 cmd_err = 0
-version = "0.0.5"
+version = "0.0.8"
 
 last_input = ""
 get_input = ""
@@ -56,24 +60,24 @@ while True:
 				print("doant shell's version is {0}".format(version))
 			elif inpu.startswith("var"):
 				if inpu.replace("var","",1).replace(" ","") == "":
-					print("invaild command\ncommand 'var' has no char\nERROR message:\nVariableNameNoCharError: Variable name has no char")
+					print(Fore.RED + "invaild command\ncommand 'var' has no char\nERROR message:\nVariableNameNoCharError: Variable name has no char")
 				else:
 					if inpu.replace("var","",1).replace(" ","").startswith("add"):
 						variable.append(inpu.replace("var","",1).replace(" ","").replace("add","",1))
 						print("successfully added variable.(variable name: {0})".format(inpu.replace("var","",1).replace(" ","" ).replace("add","",1)))
 					else:
-						print("invaild commad")
-						print("The second input to the 'var' command is 'set' or 'add', but {0} is entered.".format(inpu.replace("var","",1).replace(" ","")))
-						print("ERROR message: \nCommandSecondInputStringError: " + "The second input to the 'var' command is 'set' or 'add', but {0} is entered.".format(inpu.replace("var","",1).replace(" ","")))
+						print(Fore.RED + "invaild commad")
+						print(Fore.RED + "The second input to the 'var' command is 'set' or 'add', but {0} is entered.".format(inpu.replace("var","",1).replace(" ","")))
+						print(Fore.RED + "ERROR message: \nCommandSecondInputStringError: " + "The second input to the 'var' command is 'set' or 'add', but {0} is entered.".format(inpu.replace("var","",1).replace(" ","")))
 			elif inpu.startswith("view"):
 				print(inpu.replace("view","",1).replace(" ","",1))
 			cmd_check = 1
 	if cmd_check == 0:
 		if last_input == inpu:
 			if cmd_err == 8:
-				print("invaild system\npython operating system wasn't found\nError message:\nDuplicateWordsError: The same word has been entered more then 10 times.")
+				print(Fore.RED + "invaild system\npython operating system wasn't found\nError message:\nDuplicateWordsError: The same word has been entered more then 10 times.")
 				sys.exit()
 			cmd_err += 1
-		print("invaild command\n{0}".format(cmd_list))
+		print(Fore.RED + "invaild command\n{0}".format(cmd_list))
 	else: 
 		cmd_check = 0
